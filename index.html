@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="style.css" rel="stylesheet">
     <title>iSm@rt Coaching Classes</title>
+    <link rel="shortcut icon" href="Logo and Board/Logo 2.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="C:\xampp\htdocs\FormData.php">
 </head>
 <body>
 
@@ -16,7 +18,7 @@
     <header>
         <nav class="navbar section-content">
             <a href="#" class="nav-logo">
-                <img src="Logo.jpg" alt="ISCC Logo">
+                <img src="Logo and Board\Logo.jpg" alt="ISCC Logo">
             </a>
             <ul class="nav-menu">
                 <button id="menu-close-button" class="fas fa-times"></button>
@@ -59,7 +61,7 @@
                     </div>
                 </div>
                 <div class="hero-image-wrapper">
-                    <img src="Board 1.jpg" alt="ISCC Board" class="hero-image">
+                    <img src="Logo and Board\Board 1.jpg" alt="ISCC Board" class="hero-image">
                 </div>
             </div>
         </section>
@@ -68,7 +70,7 @@
          <section class="about-section" id="about">
             <div class="section-content">
                 <div class="about-image-wrapper">
-                    <img src="Board 1.jpg" alt="Board img" class="about-img">
+                    <img src="Logo and Board/Board 1.jpg" alt="Board img" class="about-img">
                 </div>
                 <div class="about-details">
                     <h2 class="section-title">About Us</h2>
@@ -85,8 +87,8 @@
 
 
         <!-- Contact Section -->
-         <section class="contact-section" id="contact">
-            <h2 class="section-title">Contact Us</h2>
+         <section class="contact-section" >
+            <h2 class="section-title" id="contact">Contact Us</h2>
             <div class="section-content">
                 <ul class="contact-info-list">
                     <li class="contact-info">
@@ -99,11 +101,11 @@
                     </li>
                     <li class="contact-info">
                         <i class="fa-solid fa-phone"></i>
-                        <p>+91 8082786716</p>
+                        <p>+91 8082786716 <br>+91 8779666971</p>
                     </li>
                     <li class="contact-info">
                         <i class="fa-regular fa-clock"></i>
-                        <p>Monday - Saturday 11:00 AM - 7:00 PM</p>
+                        <p>Monday - Saturday 11:00 AM - 10:00 PM</p>
                     </li>
                     <li class="contact-info">
                         <i class="fa-regular fa-clock"></i>
@@ -111,17 +113,20 @@
                     </li>
                     <li class="contact-info">
                         <i class="fa-solid fa-globe"></i>
-                        <p>http://ismartcoachingclasses.com</p>
+                        <p>https://ismartcoachingclasses.com/</p>
                     </li>
                 </ul>
-
-                <form action="#" class="contact-form">
-                    <input type="text" placeholder="Your Name" class="form-input" required>
-                    <input type="email" placeholder="Your Email" class="form-input" required>
-                    <textarea class="form-input" placeholder="Write message here" required></textarea>
-                    <button class="submit-button"> Submit </button>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.2184869635066!2d72.815101774768!3d19.18565718204166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b77bfe9a4c9f%3A0xc71e612d71641305!2siSmart%20Coaching%20Classes!5e0!3m2!1sen!2sin!4v1748247027437!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <form method="POST" class="contact-form" id="google-sheet">
+                    <input type="text" id="Name" placeholder="Type your Name here" class="form-input" required autocomplete="Name">
+                    <input type="email" id="email" placeholder="Type your Email here" class="form-input" required autocomplete="Email">
+                    <input type="text" id="number" placeholder="Your Phone Number" class="form-input" required autocomplete="Number">
+                    <textarea id="message" class="form-input" placeholder="Write your message here" required></textarea>
+                    <button class="submit-button" type="submit" name="submit">Send</button>
                 </form>
             </div>
+            
          </section>
     </main>
     <!-- Footer Section -->
@@ -142,9 +147,8 @@
             </p>
         </div>
     </footer>
-
-    <script src="script.js">
-    </script>
-    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+    <script src="script.js"></script>
 </body>
 </html>
