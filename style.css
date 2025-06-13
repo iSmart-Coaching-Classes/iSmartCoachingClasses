@@ -60,7 +60,7 @@ button{
 
 .section-content{
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
     max-width: var(--site-max-width);
 }
 
@@ -94,7 +94,6 @@ img{
 }
 
 header .navbar{
-    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -126,7 +125,7 @@ header .navbar{
 /* HERO SECTION */
 .hero-section{
     min-height: 100vh;
-    background: lemonchiffon;
+    /* background: lemonchiffon; */
 }
 
 .hero-section .section-content{
@@ -236,13 +235,13 @@ header .navbar{
 
 /* Contact Us Section */
 .contact-section{
-    padding: 50px 0 100px;
+    padding: 0px 0 100px;
     background: var(--secondary-color);
 }
 
 .contact-section .section-content{
     display: flex;
-    gap: 48px;
+    gap: 40px;
     align-items: flex-start;
     justify-content: space-between;
 }
