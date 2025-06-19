@@ -7,6 +7,11 @@
     font-family: "Poppins", sans-serif;
 }
 
+/* GLOBAL STYLES */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
     /*Colors*/
     --black-color: #0d0c09;
@@ -18,13 +23,14 @@
     --brown-color: #8f5c06;
     --lightbrown-color: #cb8a1a;
 
+    --font-size-m: clamp(0.9rem, 2vw, 1rem);
+    --font-size-l: clamp(1.1rem, 3vw, 1.3rem);
+    --font-size-xl: clamp(1.3rem, 4vw, 1.5rem);
+    --font-size-xxl: clamp(1.5rem, 5vw, 1.8rem);
+
     /*Font size*/
     --font-size-s: 0.9rem;
     --font-size-n: 1em;
-    --font-size-m: 1.12rem;
-    --font-size-l: 1.5rem;
-    --font-size-xl: 2rem;
-    --font-size-xxl: 2.3rem;
 
     /*Font Weight*/
     --font-weight-normal: 400;
@@ -41,8 +47,14 @@
     --site-max-width: 1300px;
 }
 
-html{
+html,body{
     scroll-behavior: smooth;
+    height: 100%;
+}
+
+/* Prevent Scroll When Mobile Menu is Open */
+body.show-mobile-menu {
+    overflow: hidden;
 }
 
 /* Styling for whole Site */
@@ -182,9 +194,51 @@ header .navbar{
     transition: 0.3s ease;
 }
 
+/* Image Slider */
+.Imageslider{
+    margin: auto;
+    margin-bottom: 20px;
+    width: 600px;
+    height: 550px;
+    box-shadow: 0px 0px 3px grey;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.imgGallery{
+    margin: auto;
+    text-align: center;
+}
+
+.islide{
+    width: 600px;
+    height: 550px;
+    position: absolute;
+    transition: 1s;
+    display: inline-block;
+}
+.islide img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    margin: auto;
+}
+
+.nav{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.nav button{
+    font-size: 25px;
+    padding: 5px;
+}
+
 /* About Section CSS */
 .about-section{
-    padding: 120px 0;
+    width: 100%;
+    padding: 10px 0;
     background: #f2ebd6;
 }
 
@@ -235,7 +289,7 @@ header .navbar{
 
 /* Contact Us Section */
 .contact-section{
-    padding: 0px 0 100px;
+    padding: 10px 0;
     background: var(--secondary-color);
 }
 
@@ -359,6 +413,13 @@ header .navbar{
     .navbar :where(#menu-close-button, #menu-open-button){
         display: block;
         font-size: var(--font-size-l);
+        padding: 10px;
+        min-width: 44px;
+        min-height: 44px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 100;
     }
 
     .navbar #menu-close-button{
@@ -382,7 +443,8 @@ header .navbar{
         flex-direction: column;
         align-items: center;
         padding-top: 100px;
-        transition: left 0.2s ease;
+        transition: left 0.3s ease;
+        z-index: 98;
     }
 
     body.show-mobile-menu .navbar .nav-menu{
@@ -394,14 +456,16 @@ header .navbar{
         color: var(--primary-color);
         font-size: var(--font-size-l);
         margin-top: 18px;
+        text-decoration: none;
     }
-
+ /* HERO SECTION */
     .hero-section .section-content{
         gap: 50px;
         text-align: center;
         padding: 30px 20px 20px;
         flex-direction: column-reverse;
         justify-content: center;
+        flex-wrap: wrap;
     }
     
     .hero-section .hero-image-wrapper{
@@ -415,23 +479,33 @@ header .navbar{
     
     .hero-section .hero-details .buttons{
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
     }
-
+    /* ABOUT SECTION */
     .about-section .section-content{
         gap: 70px;
         flex-direction: column-reverse;
+        flex-wrap: wrap;
+
     }
 
     .about-section .about-image-wrapper .about-image{
         width: 100%;
-        height: 100%;
+        height: auto;
         max-width: 250px;
         aspect-ratio: 1;
     }
-
+/* CONTACT SECTION */
     .contact-section .section-content{
         flex-direction: column-reverse;
         align-items: center;
+        flex-wrap: wrap;
+    }
+
+/* Ensure All Section Contents Wrap Responsively */
+    .section-content {
+        flex-wrap: wrap;
     }
 }
 
@@ -441,4 +515,20 @@ header .navbar{
         gap: 20px;
     }
 
+    .hero-section .hero-image-wrapper,.about-section .about-image-wrapper {
+        margin: 0 auto;
+    }
+
+    .navbar .nav-menu {
+        width: 100%;
+        left: -100%;
+    }
+
+    body.show-mobile-menu .navbar .nav-menu {
+        left: 0;
+    }
+
+    .about-section, .contact-section, .footer-section {
+        width: 100vh;
+    }
 }
