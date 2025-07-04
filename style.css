@@ -63,6 +63,7 @@ ul{
 }
 a{
     text-decoration: none;
+    display: inline-block;
 }
 button{
     background: none;
@@ -73,12 +74,12 @@ button{
 .section-content{
     margin: 0 auto;
     padding: 0;
-    max-width: var(--site-max-width);
+    /* max-width: var(--site-max-width); */
 }
 
 .section-title{
     text-align: center;
-    padding: 60px 0 100px;
+    padding: 40px 0;
     text-transform: uppercase;
     font-size: var(--font-size-xl);
 }
@@ -95,10 +96,10 @@ button{
 /*Navbar*/
 
 header{
-    position: fixed;
+    position: fixed; 
     width: 100%;
     z-index: 5;
-    background: white;
+    background:rgba(255,255,255,255);
 }
 img{
     width: 200px;
@@ -106,28 +107,46 @@ img{
 }
 
 header .navbar{
-    display: flex;
+    display: flex ;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .navbar .nav-menu{
     display: flex;
-    gap: 10px;
+    gap: 70px;
+    /* border: 2px solid rebeccapurple; */
+    justify-content: space-between;
+    margin-left: 50px;
 }
 
-.navbar .nav-menu .nav-link{
+.navbar .nav-menu .nav-link ,.demo{
     padding: 10px 18px;
     color: var(--primary-color);
     border-radius: var(--border-radius-m);
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-l);
     transition: 0.3s ease;
 }
 .navbar .nav-menu .nav-link:hover{
-    color: var(--black-color);
+    color: white;
     background-color: var(--primary-color);
     border-radius: var(--border-radius-m);
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-xl);
+}
+
+.navbar .nav-menu .demo{
+    border: 3px solid var(--primary-color);
+    border-radius: 0;
+    color: black;
+    position: absolute;
+    right: 0;
+    top: 12px;
+}
+.navbar .nav-menu .demo:hover{
+    border: 3px solid var(--primary-color);
+    border-radius: 0;
+    color: white;
+    background-color: var(--primary-color);
 }
 
 .navbar :where(#menu-close-button, #menu-open-button){
@@ -136,63 +155,95 @@ header .navbar{
 
 /* HERO SECTION */
 .hero-section{
-    min-height: 100vh;
-    /* background: lemonchiffon; */
+    min-height: 95vh;
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-section .section-content{
-    display: flex;
+    /* border: 10px solid rgb(255, 0, 0); */
+    /* display: flex; */
     align-items: center;
     min-height: 100vh;
-    color: var(--black-color);
-    justify-content: space-between;
+    color: white;
+    /* justify-content: space-between; */
 }
 
-.hero-section .hero-details .title{
-    font-size: var(--font-size-xxl);
-    color: var(--black-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.hero-section .hero-details{
+    margin: 0px auto;
 }
 
 .hero-section .hero-details .subtitle{
-    margin-top: 8px;
-    max-width: 70%;
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
+    /* border: 5px solid white; */
+    padding: 12% 0% 0%;
+    max-width: 1000px;
+    font-size:xxx-large;
+    font-weight: bolder;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .hero-section .hero-details .description{
+    /* border: 5px solid white; */
     max-width: 70%;
-    margin: 24px 0 40px;
-    font-size: var(--font-size-m);
+    margin: 24px auto 0px;
+    font-size: var(--font-size-l);
+    text-align: center;
+}
+.hero-section .hero-details .descriptionp{
+    /* border: 5px solid white; */
+    max-width: 60%;
+    margin: 0 auto 20px;
+    font-size: var(--font-size-l);
+    text-align: center;
 }
 
-.hero-section .hero-details .hero-image-wrapper{
-    max-width: 50%;
-    margin-right: 30px;
+/* ################### Buttons ################# */
+
+.hero-section .section-content .buttons{
+    /* border: 2px solid green; */
+    margin-top: 5%;
+    /* background-color: antiquewhite; */
+    position: relative;
+}
+.hero-section .section-content .buttons .section-button{
+    background-color: #ff6a00; /* Bright orange */
+    color: white;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-m);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+    height: 50%;
+    padding: 20px;
+    margin:0 20px;
 }
 
-.hero-section .hero-details .buttons{
-    display: flex;
-    gap: 23px;
-}
-
-.hero-section .hero-details .button:hover{
+.hero-section .section-content .buttons .section-button:hover{
     color: var(--black-color);
     border-color: var(--black-color);
     background: var(--offwhite-color);
 
 }
-
-.hero-section .hero-details .button{
-    padding: 10px 26px;
-    border: 2px solid transparent;
-    color: white;
-    border-radius: var(--border-radius-m);
-    background: var(--primary-color);
-    font-weight: var(--font-weight-medium);
-    transition: 0.3s ease;
+.hero-section .section-content .buttons .section-button i{
+    margin-right: 10px;
 }
+.hero-section .section-content .buttons .hero-image-wrapper{
+    display: inline-block;
+    /* border: 10px solid rgb(7, 31, 245);  ryss */
+    margin-right: 30px;
+    position: absolute;
+    right: 0;
+}
+
 
 /* Image Slider */
 .Imageslider{
